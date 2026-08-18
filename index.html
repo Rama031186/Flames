@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FLAMES Game</title>
+
+    <meta
+        name="description"
+        content="A fun and interactive FLAMES name compatibility game."
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="app">
+
+        <!-- Header -->
+        <header class="hero">
+            <div class="heart-icon">♥</div>
+
+            <h1>FLAMES</h1>
+
+            <p>
+                The classic name compatibility game
+            </p>
+        </header>
+
+
+        <!-- Input Card -->
+        <section class="card input-card">
+
+            <div class="card-heading">
+                <span class="heading-icon">✦</span>
+                <div>
+                    <h2>Enter the Names</h2>
+                    <p>Let's see what the FLAMES game says.</p>
+                </div>
+            </div>
+
+
+            <div class="name-inputs">
+
+                <div class="input-group">
+                    <label for="name1">
+                        Your Name
+                    </label>
+
+                    <div class="input-wrapper">
+                        <span class="input-icon">👤</span>
+
+                        <input
+                            type="text"
+                            id="name1"
+                            placeholder="Enter your name"
+                            autocomplete="off"
+                            maxlength="50"
+                        >
+                    </div>
+                </div>
+
+
+                <div class="versus">
+                    <span>VS</span>
+                </div>
+
+
+                <div class="input-group">
+                    <label for="name2">
+                        Their Name
+                    </label>
+
+                    <div class="input-wrapper">
+                        <span class="input-icon">♥</span>
+
+                        <input
+                            type="text"
+                            id="name2"
+                            placeholder="Enter their name"
+                            autocomplete="off"
+                            maxlength="50"
+                        >
+                    </div>
+                </div>
+
+            </div>
+
+
+            <button id="calculateBtn" class="calculate-btn">
+                <span>Calculate FLAMES</span>
+                <span class="arrow">→</span>
+            </button>
+
+            <p id="errorMessage" class="error-message"></p>
+
+        </section>
+
+
+        <!-- Result Section -->
+        <section id="resultSection" class="result-section hidden">
+
+            <!-- Remaining Letters -->
+            <div class="card remaining-card">
+
+                <div class="section-title">
+                    <span>01</span>
+                    <h2>Matching Letters</h2>
+                </div>
+
+                <p class="description">
+                    Matching letters are cancelled one-for-one.
+                    These are the letters left after cancellation:
+                </p>
+
+                <div id="remainingDisplay" class="remaining-display">
+                </div>
+
+                <div class="count-box">
+                    <span>Total remaining letters</span>
+                    <strong id="remainingCount">0</strong>
+                </div>
+
+            </div>
+
+
+            <!-- FLAMES Process -->
+            <div class="card flames-card">
+
+                <div class="section-title">
+                    <span>02</span>
+                    <h2>FLAMES Elimination</h2>
+                </div>
+
+                <p class="description">
+                    Starting with the remaining-letter count, we
+                    eliminate one FLAMES letter at a time until
+                    only one remains.
+                </p>
+
+
+                <div id="flamesBoard" class="flames-board">
+
+                    <div class="flame-item" data-letter="F">
+                        <span class="flame-letter">F</span>
+                        <span>Friends</span>
+                    </div>
+
+                    <div class="flame-item" data-letter="L">
+                        <span class="flame-letter">L</span>
+                        <span>Lovers</span>
+                    </div>
+
+                    <div class="flame-item" data-letter="A">
+                        <span class="flame-letter">A</span>
+                        <span>Affection</span>
+                    </div>
+
+                    <div class="flame-item" data-letter="M">
+                        <span class="flame-letter">M</span>
+                        <span>Marriage</span>
+                    </div>
+
+                    <div class="flame-item" data-letter="E">
+                        <span class="flame-letter">E</span>
+                        <span>Enemies</span>
+                    </div>
+
+                    <div class="flame-item" data-letter="S">
+                        <span class="flame-letter">S</span>
+                        <span>Siblings</span>
+                    </div>
+
+                </div>
+
+
+                <div class="elimination-title">
+                    Elimination Order
+                </div>
+
+                <div id="eliminationSteps" class="elimination-steps">
+                </div>
+
+            </div>
+
+
+            <!-- Final Result -->
+            <div class="card final-card">
+
+                <div class="section-title centered">
+                    <span>03</span>
+                    <h2>Final Result</h2>
+                </div>
+
+
+                <div id="finalLetter" class="final-letter">
+                    ?
+                </div>
+
+                <div id="finalRelationship" class="final-relationship">
+                    -
+                </div>
+
+                <p id="finalDescription" class="final-description">
+                </p>
+
+
+                <button id="resetBtn" class="reset-btn">
+                    ↻ Play Again
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Footer -->
+        <footer>
+            <p>
+                FLAMES is a classic entertainment game and is not
+                a scientific measure of compatibility.
+            </p>
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
